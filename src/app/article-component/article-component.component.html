@@ -1,9 +1,11 @@
 <div class="outline">
-    <h1>Lorem Ipsum</h1>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a augue erat. 
-        Cras consequat enim dui, quis scelerisque mauris luctus eu. Etiam sagittis ipsum at nisl 
-        sodales condimentum eget a enim. Donec posuere odio at felis ornare gravida. In auctor, 
-        ligula sit amet iaculis vehicula, ligula sapien condimentum odio, id congue justo magna eget ante. 
-        Nunc aliquet est ut ullamcorper suscipit. Vestibulum ante ipsum primis in faucibus orci luctus et 
-        ultrices posuere cubilia curae; Donec tempus iaculis nulla, in blandit ligula euismod pharetra.</p>
+    <h1>{{article.title}}</h1>
+    <h2>{{article.author}}</h2>
+    <p>{{article.content}}</p>
+    <img [src]="article.image" />
+    <input type="text" [(ngModel)]="article.comment">
+    <button (click)="togglePublication()">
+        {{ article.isPublished ? 'Publier' : 'Supprimer l\'article' }}
+    </button>
+    <p>{{ !article.isPublished ? article.comment : 'Pas d\'article' }}</p>
 </div>
