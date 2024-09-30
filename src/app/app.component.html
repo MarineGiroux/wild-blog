@@ -1,16 +1,1 @@
-<h1>Bienvenue sur le Wild Blog de {{ title }} !</h1>
-
-
-@if(publishedArticles.length > 0){
-  @for(article of publishedArticles; track $index){
-    <div [ngClass]="{'popular-article': article.likes >= 100}" [ngStyle]="{color: article.likes >= 150? '#743baa':'black'}">
-      <h1>{{article.title}}</h1>
-      <h2>{{article.author}}</h2>
-      <p>{{article.content}}</p>
-      <img [src]="article.image" />
-      <p>Nombre de likes : {{article.likes}}</p>
-    </div>
-  }
-}@else{
-    <h2>Aucun article publié pour le moment</h2>
-}
+<router-outlet></router-outlet>
