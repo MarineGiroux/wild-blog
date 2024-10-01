@@ -75,8 +75,11 @@ export const articles: Article[] = [
     }
   ];
 
-  export function getArticleById(id:number):Article | undefined{
+  export function getArticleById(id:number):Article{
+    const article = articles.find((article) => article.id === id);
 
-    return articles.find((article) => article.id === id);
-
+    if(article === undefined){
+      throw new Error("pas d'article trouvé");
+    }
+    return article;
   }
