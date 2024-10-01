@@ -1,0 +1,65 @@
+div {
+    padding: 1rem;
+    margin: 2rem;
+    text-align: center;
+  }
+
+  label {
+    margin: 7px;
+  }
+
+  .general {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  a {
+    line-height: 2.5;
+    padding: 10px;
+    font-size: 1rem;
+    text-align: center;
+    color: #000000;
+    border-radius: 5px;
+    background-color: rgb(228, 218, 242);
+    border: solid 1px;
+    border-color: rgb(186, 164, 216);
+    text-decoration: none;
+    box-shadow: inset -2px -2px 3px rgba(0, 0, 0, 0.6);
+  }
+  
+  a:hover {
+    background-color: rgb(207, 186, 234);
+  }
+  
+  a:active {
+    box-shadow: inset -2px -2px 3px rgba(255, 255, 255, 0.6),
+      inset 2px 2px 3px rgba(0, 0, 0, 0.6);
+  }
+  
+  button {
+    margin: 10px;
+    line-height: 2.5;
+    width: 250px;
+    font-size: 1rem;
+    text-align: center;
+    color: #000000;
+    border-radius: 5px;
+    background-color: rgb(228, 218, 242);
+    border: solid 1px;
+    border-color: rgb(186, 164, 216);
+    text-decoration: none;
+    box-shadow: inset -2px -2px 3px rgba(0, 0, 0, 0.6);
+  }
+  
+  button:hover {
+    background-color: rgb(207, 186, 234);
+  }
+  
+  button:active {
+    box-shadow: inset -2px -2px 3px rgba(255, 255, 255, 0.6),
+      inset 2px 2px 3px rgba(0, 0, 0, 0.6);
+  }
+  

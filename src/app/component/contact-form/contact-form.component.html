@@ -15,7 +15,7 @@
           maxlength="15"
         />
         @if (firstname.errors) {
-        <div class="form-group" v>
+        <div class="form-group">
           @if(firstname.errors['required']) {
           <span [hidden]="!contactForm.submitted"
             >Le prénom est obligatoire</span

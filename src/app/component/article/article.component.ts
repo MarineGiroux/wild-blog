@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, inject, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { ActivatedRoute, ParamMap, Route, Router, RouterLink } from '@angular/router';
-import { Article, getArticleById } from '../models/article';
+import { Article, getArticleById } from '../../models/article.model';
 
 @Component({
   selector: 'app-article-component',

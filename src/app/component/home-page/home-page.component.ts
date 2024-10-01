@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
-import { articles } from '../models/article';
+import { articles } from '../../models/article.model';
 
 @Component({
   selector: 'app-home-page',
