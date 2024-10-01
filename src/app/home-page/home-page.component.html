@@ -1,0 +1,21 @@
+<div>
+  
+  <h1>Bienvenue sur le Wild Blog de {{ title }} !</h1>
+
+<div [ngClass]="{'general' : goToArticle}">
+  @if(publishedArticles.length > 0){
+    @for(article of publishedArticles; track article.id){
+      <div [ngClass]="{'popular-article': article.likes >= 100}" >
+        <h1 [ngStyle]="{color: article.likes >= 150? '#743baa':'black'}">{{article.title}}</h1>
+        <img [src]="article.image" />
+        <p>Nombre de likes : {{article.likes}}</p>
+        <a [routerLink] = "['/article', article.id]">Pour en savoir plus</a>
+      </div>
+    }
+  }@else{
+      <h2>Aucun article publié pour le moment</h2>
+  }
+</div>
+
+  <a [routerLink] = "['inscription']">Inscription</a>
+</div>

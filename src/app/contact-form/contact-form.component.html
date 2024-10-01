@@ -1,0 +1,88 @@
+<div class="general">
+  <div class="form-group">
+    <form #contactForm="ngForm" (ngSubmit)="contactForm.valid && onSubmit()">
+      <fieldset>
+        <label for="firstname">Prénom</label>
+        <input
+          class="form-control"
+          id="firstname"
+          name="firstname"
+          type="text"
+          [(ngModel)]="newMessage.firstname"
+          #firstname="ngModel"
+          required
+          minlength="2"
+          maxlength="15"
+        />
+        @if (firstname.errors) {
+        <div class="form-group" v>
+          @if(firstname.errors['required']) {
+          <span [hidden]="!contactForm.submitted"
+            >Le prénom est obligatoire</span
+          >
+          } @if (firstname.errors['minlength']) {
+          <span>2 caractères minimum</span>
+          } @if (firstname.errors['maxlength']) {
+          <span>15 caractères maximum !</span>
+          }
+        </div>
+        }
+      </fieldset>
+      <fieldset>
+        <label for="lastname">Nom</label>
+        <input
+          class="form-control"
+          id="lastname"
+          name="lastname"
+          type="text"
+          [(ngModel)]="newMessage.lastname"
+          #lastname="ngModel"
+          required
+          minlength="2"
+          maxlength="15"
+        />
+        @if (lastname.errors) {
+        <div class="form-group">
+          @if (lastname.errors['required']) {
+          <span [hidden]="!contactForm.submitted"
+            >Le nom est obligatoire</span
+          >
+          } @if (lastname.errors['minlength']) {
+          <span>2 caractères minimum</span>
+          } @if (lastname.errors['maxlength']) {
+          <span>15 caractères maximum !</span>
+          }
+        </div>
+        }
+      </fieldset>
+      <fieldset>
+        <label for="email">Contact</label>
+        <input
+          class="form-control"
+          id="email"
+          name="email"
+          type="email"
+          [(ngModel)]="newMessage.email"
+          #email="ngModel"
+          required
+          email
+        />
+        @if (email.errors) {
+        <div>
+          @if (email.errors['required']) {
+          <span [hidden]="!contactForm.submitted"
+            >L'email est obligatoire</span
+          >
+          } @if (email.errors['email']) {
+          <span>L'email est invalide</span>
+          }
+        </div>
+        }
+      </fieldset>
+
+      <button type="reset">Restaurer</button>
+      <button type="submit">Sauvegarder</button>
+    </form>
+    <a [routerLink]="['/']">Retour à la page principale</a>
+  </div>
+</div>
