@@ -1,10 +1,9 @@
 <div [ngClass]="{'general' : article}">
     <div>
-        <h1>{{article.title}}</h1>
+        <h1 [ngStyle]="{color: article.likes >= 150? '#743baa':'black'}">{{article.title}}</h1>
         <h2>{{article.author}}</h2>
         <img [src]="article.image" />
-        <p>Nombre de likes : {{article.likes}}</p>
+        <p [ngStyle]="{color: article.likes >= 150? '#743baa':'black'}">Nombre de likes : {{article.likes}}</p>
         <p>{{article.content}}</p>
-        <a [routerLink] = "['/']">Retour à la page principale</a>
     </div>
 </div>
