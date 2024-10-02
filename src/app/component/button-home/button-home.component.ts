@@ -10,5 +10,5 @@ import { RouterLink } from '@angular/router';
 })
 export class ButtonHomeComponent {
 
- @Input() messageButtonHome: string = 'Retour à la page d\'accueil';
+ @Input() messageButtonHome: string = '';
 }
