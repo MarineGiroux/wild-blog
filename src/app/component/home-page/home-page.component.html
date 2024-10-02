@@ -1,22 +1,22 @@
 <div>
-  
   <h1>Bienvenue sur le Wild Blog de {{ title }} !</h1>
 
-<div [ngClass]="{'general' : goToArticle}">
-  
-  @if(publishedArticles.length > 0){
-    @for(article of publishedArticles; track article.id){
-      <div [ngClass]="{'popular-article': article.likes >= 100}" >
-        <app-article-component [article]="article"></app-article-component>
-      </div>
+  <div [ngClass]="{ general: goToArticle }">
+    @if(publishedArticles.length > 0){ @for(article of publishedArticles; track
+    article.id){
+    <div [ngClass]="{ 'popular-article': article.likes >= 100 }">
+      <app-article-component
+        [article]="article"
+        (dataLikeArticle)="onReceiveDataArticle($event)"
+      >
+      </app-article-component>
+    </div>
+    } }@else{
+    <h2>Aucun article publié pour le moment</h2>
     }
-  }@else{
-      <h2>Aucun article publié pour le moment</h2>
-  }
+  </div>
 
-</div>
-
-  <a [routerLink] = "['inscriptionTemplate']">Inscription Template Driven Form</a>
-  <a [routerLink] = "['inscriptionReactive']">Inscription Reactive Form</a>
-
+  <h2>{{ messageLike }}</h2>
+  <a [routerLink]="['inscriptionTemplate']">Inscription Template Driven Form</a>
+  <a [routerLink]="['inscriptionReactive']">Inscription Reactive Form</a>
 </div>

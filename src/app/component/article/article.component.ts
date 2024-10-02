@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import {
   RouterLink,
@@ -15,4 +15,10 @@ import { Article } from '../../models/article.model';
 })
 export class ArticleComponent {
   @Input() article!: Article;
+
+  @Output() dataLikeArticle: EventEmitter <string> = new EventEmitter<string>();
+
+  triggerOutput(){
+    this.dataLikeArticle.emit("L'article " + this.article.title + " vient d'être liké")
+  }
 }

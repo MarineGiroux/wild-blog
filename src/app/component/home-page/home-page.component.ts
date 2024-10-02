@@ -75,4 +75,13 @@ export class HomePageComponent {
   goToArticle(articleId: number) {
     this.router.navigate(['/article', articleId]);
   }
+
+  messageLike: string = "";
+
+  onReceiveDataArticle(valueReceived: string){
+    this.messageLike=valueReceived;
+    console.log(valueReceived);
+    console.log("like");
+    
+  }
 }

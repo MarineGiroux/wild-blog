@@ -5,5 +5,6 @@
         <img [src]="article.image" />
         <p [ngStyle]="{color: article.likes >= 150? '#743baa':'black'}">Nombre de likes : {{article.likes}}</p>
         <p>{{article.content}}</p>
+        <button (click)="triggerOutput()">Liker</button>
     </div>
 </div>
